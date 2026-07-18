@@ -1,0 +1,36 @@
+{
+  "name": "synapse-video-rag",
+  "version": "1.0.0",
+  "description": "Synapse — Multimodal Video-RAG Platform with Agentic Workflows",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm start",
+    "setup:python": "pip install -r server/python-workers/requirements.txt --break-system-packages"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/synapse-video-rag"
+  },
+  "keywords": [
+    "video-rag",
+    "multimodal",
+    "retrieval-augmented-generation",
+    "agentic-ai",
+    "langchain",
+    "pinecone",
+    "whisper",
+    "diarization"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap');
+
+@layer base {
+  html { @apply scroll-smooth; color-scheme: dark; }
+  body { @apply bg-surface-50 text-slate-200 font-sans antialiased; overflow-x: hidden; }
+  ::selection { @apply bg-brand-400/25 text-white; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-600/40 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-500/60; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-surface-100/70 backdrop-blur-xl border border-white/[0.04] shadow-inner-glow;
+  }
+  .glass-strong {
+    @apply bg-surface-200/80 backdrop-blur-xl border border-white/[0.06] shadow-inner-glow;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-brand-400 text-surface-0 font-semibold text-sm rounded-xl
+           hover:bg-brand-300 active:bg-brand-500 transition-all duration-200
+           shadow-glow-sm hover:shadow-glow;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-slate-600/50 text-slate-300 font-medium text-sm rounded-xl
+           hover:bg-surface-300/50 hover:text-white hover:border-slate-500/60 transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 px-4 py-2 text-slate-400 font-medium text-sm rounded-lg
+           hover:text-white hover:bg-white/[0.04] transition-all duration-200;
+  }
+  .input-field {
+    @apply w-full bg-surface-400/40 border border-white/[0.06] rounded-xl px-4 py-3
+           text-slate-200 placeholder:text-slate-500 text-sm
+           focus:outline-none focus:border-brand-400/40 focus:ring-1 focus:ring-brand-400/20
+           transition-all duration-200;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-medium rounded-md
+           bg-white/[0.04] border border-white/[0.06] text-slate-400;
+  }
+  .badge-active {
+    @apply bg-accent-emerald/10 border-accent-emerald/20 text-accent-emerald;
+  }
+  .badge-danger {
+    @apply bg-accent-rose/10 border-accent-rose/20 text-accent-rose;
+  }
+  .stat-card {
+    @apply glass rounded-2xl p-5 flex flex-col gap-1;
+  }
+  .section-label {
+    @apply text-[11px] font-mono font-semibold uppercase tracking-[0.15em] text-slate-500;
+  }
+  .hud-mono {
+    @apply font-mono text-xs tracking-wider uppercase;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-300 via-brand-400 to-brand-300 bg-clip-text text-transparent;
+  }
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .border-glow {
+    @apply border border-brand-400/20;
+    box-shadow: 0 0 16px -4px rgba(212,148,58,0.08), inset 0 0 16px -4px rgba(212,148,58,0.03);
+  }
+}

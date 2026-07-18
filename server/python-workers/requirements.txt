@@ -1,0 +1,46 @@
+# ============================================================
+# Zeta Video-RAG — Python Dependencies
+# ============================================================
+# Install:
+#   pip install torch torchvision torchaudio
+#   pip install -r requirements.txt
+# ============================================================
+
+# --- Core ---
+numpy
+pandas
+scipy
+python-dotenv
+requests
+tqdm
+
+# --- Local Whisper (FREE transcription) ---
+openai-whisper
+
+# --- Audio Utilities ---
+openai
+pydub
+soundfile
+intervaltree
+ffmpeg-python
+
+# --- Visual Pipeline ---
+opencv-python-headless
+Pillow
+transformers
+accelerate
+
+# --- Local Embeddings (FREE, 384-dim) ---
+sentence-transformers
+
+# --- Local Vector DB (FREE, no API key) ---
+chromadb
+
+# --- Sentiment ---
+textblob
+
+# --- Fact-Checking (optional) ---
+tavily-python
+
+# --- Node-fetch for Ollama calls from Node.js ---
+# (installed via npm, not pip)
